@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        Name : <input type="text" name="uname" /><br>
+        Email : <input type="text" name="email"/><br>
+        Phone : <input type="text" name="phone"/><br>
+        Message : <textarea name="message"></textarea><br>
+        <button type="submit">Save</button>
+    </form>
+    <div class="userdetails">
+
+    </div>
+</body>
+<script type="text/javascript">
+    var form=document.querySelector("form");
+    var maindiv=document.querySelector(".userdetails");
+
+    var displayData=()=>{
+        var finaldata='';
+        var user=localStorage.getItem('userinfoDetail');
+        var userDetails=JSON.parse(user) ?? []; //blank if not data
+
+        userDetails.forEach((v,i) => {
+            finaldata +=`
+            <div>Name : ${v.name} <br/></div>
+            <div>Email : ${v.email} <br/></div>
+            <div>Phone : ${v.phone} <br/></div>
+            <div>Message: ${v.message} <br/></div>
+            `;
+        });
+        maindiv.innerHTML=finaldata;
+    }
+    displayData();
+
+    form.addEventListener("submit",(event)=>{
+            event.preventDefault();
+            var user=localStorage.getItem('userinfoDetail');
+            var userDetails=JSON.parse(user) ?? []; 
+
+            userDetails.push({
+                'name':event.target.uname.value,
+                'email':event.target.email.value,
+                'phone':event.target.phone.value,
+                'message':event.target.message.value
+            });
+         event.target.reset();
+         localStorage.setItem('userinfoDetail', JSON.stringify(userDetails));
+
+         displayData();
+    });
+</script>
+</html>

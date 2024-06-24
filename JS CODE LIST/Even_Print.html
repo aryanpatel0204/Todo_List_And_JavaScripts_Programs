@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Even Number Print </title>
+</head>
+
+<body>
+    <h1> Even Number Print </h1>
+</body>
+<script>
+
+    var even = [];
+
+    var odd = [];
+
+    var numbers = [5, 1, 6, 8, 9, 7, 0, 10, 45, 66, 23, 22];
+
+    for (var i = 0; i < numbers.length; i++) {
+
+        n = numbers[i];
+
+        if (n % 2 == 0) {
+
+            even.push(n);
+
+        } else {
+
+            odd.push(n);
+        }
+
+    }
+
+    document.write(even);
+    document.write("<br/>");
+    document.write(odd);
+
+ 
+
+</script>
+
+</html>

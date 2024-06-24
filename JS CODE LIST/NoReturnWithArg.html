@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // function factorial(no)
+        // {
+        //     let f=1;
+
+        //     for(i=1;i<=no;i++)
+        //     {
+        //         f=f*i;
+        //     }
+
+        //     document.write("Factorial = "+f);
+        // }
+
+        // function power(x,y)
+        // {
+        //     let p=1;
+
+        //     for(i=1;i<=y;i++)
+        //     {
+        //         p=p*x;
+        //     }
+
+        //     document.write("Power = "+p);
+        // }
+
+
+        const factorial = no => {
+            let f=1;
+
+            for(i=1;i<=no;i++)
+            {
+                f=f*i;
+            }
+
+            document.write("Factorial = "+f+"<br>");
+        }
+
+        const power = (x,y) => {
+            let p=1;
+
+            for(i=1;i<=y;i++)
+            {
+                p=p*x;
+            }
+
+            document.write("Power = "+p+"<br>");
+        }
+
+        const display = () => document.write("My name is Mahesh Gurjar (MG)")
+    
+
+        factorial(4);
+        factorial(3);
+
+        power(2,4);
+        power(4,5);
+
+        display();
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

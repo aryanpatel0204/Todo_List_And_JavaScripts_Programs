@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // function factorial(no){
+        //     if(no==1){
+        //         return 1;
+        //     }
+
+        //     return no * factorial(no-1);
+        // }
+
+        const factorial = no => {
+            if(no==1)
+            {
+                return 1;
+            }
+
+            return no*factorial(no-1);
+        }
+
+        let ans = factorial(7);
+        document.write("Factorial = "+ans);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

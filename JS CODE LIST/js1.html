@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        number=Number(prompt("Enter number =>"))
+
+        var sum = 0;
+    
+        for (var i = 1; i < number; i++) {
+
+          if (number % i == 0) {
+            sum +=i;
+          }
+        }
+        if (sum==number)
+        {
+            alert("Number is perfect");
+        }
+        else{
+            alert("Number is not perfect");
+        }
+    </script>
+</body>
+</html>

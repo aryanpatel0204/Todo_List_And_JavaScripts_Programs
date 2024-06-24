@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click me </button>
+    <script>
+        let btn = document.querySelector("#btn");
+
+        // Syntax, click event and second function
+        btn.addEventListener("click", () => {
+            //It will generate random values from 1 to 100
+            let randomNumber = Math.floor(Math.random() * 30) + 1; // Generate a new random number on each click
+            let name = `No is ${randomNumber}`; // Template literal
+            alert(name);
+        });
+    </script>
+</body>
+
+</html>

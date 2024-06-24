@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            font-family: sans-serif;
+        }
+        .formOuter{
+            max-width: 1000px;
+            margin:auto;
+        }
+        .formOuter form{
+            display: flex;
+            padding:20px 0px;
+            gap:20px;
+        }
+        .formOuter form input{
+            flex-basis:70%;
+            height: 35px;
+        }
+        .formOuter form button{
+            flex-basis:30%;
+        }
+        .toList{
+            width: 1000px;
+            margin: auto;
+        }
+        .toList ul{
+            list-style:none;
+            
+        }
+        .toList ul li{
+            padding: 15px;
+            background-color: cornsilk;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .toList ul li span{
+            position: absolute;
+            right: 0px;
+            color:black;
+            font-size: 25px;
+            cursor: pointer;
+            top:10px;
+            padding-right: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="formOuter">
+        <form action="">
+            <input type="text" name="todoname" placeholder="Add todo Items">
+            <button>Save</button>
+        </form>
+    </div>
+    <div class="toList">
+        <ul>
+            <!--<li>Hi <span> x</span> </li>-->
+        </ul>
+    </div>
+</body>
+<script>
+    let toListItem=[];
+    const form=document.querySelector("form")
+    let ulList=document.querySelector(".toList ul")
+    form.addEventListener("submit",(event)=>{
+        
+        let form=event.target;
+        
+        let userInput=form.todoname.value;
+
+        //let's check exist or not
+
+        if(toListItem.includes(userInput))
+        {
+            alert("Already exist");
+        }
+        else
+        {
+            toListItem.push(userInput);
+            //alert("added item");
+        }
+        
+        loadDataItems();
+        
+        //form.todoname.value = ''; // Clear the input field
+        event.target.reset(); //either or value=''
+
+        event.preventDefault(); //stop form refersh
+    });
+
+    //display all the records from the array to list
+    let loadDataItems=()=>{
+        //alert(toListItem);
+
+        ulList.innerHTML=""; //make clear
+        let li="";
+        toListItem.forEach((arrayValue,index)=>{
+            //below we create custom id u can write anything after data-xyz 
+            li+=`<li>${index+1} ${arrayValue} <span data-delid=${index}> X </span></li>`;
+
+        });
+        ulList.innerHTML=li;
+    }
+
+    ulList.addEventListener("click",(event)=>{
+        
+        if(event.target.tagName=="SPAN")
+        {  
+            //alert(event.target.getAttribute('data-delid'));
+            let index=(event.target.getAttribute('data-delid'));
+            toListItem.splice(index,1);
+            loadDataItems();
+        }
+        
+    });
+</script>
+</html>

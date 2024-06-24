@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //code for getting numbers from array 'n' that are divisible by 2 only using filter function.
+        //By using filter function it will decrease the size of the array instead of map function.
+        //OP: 22,44,66,88,120
+        //for search filter size decrease
+        let n=[22,44,55,66,77,88,99,120];
+
+        let newarray=n.filter((v,i) => v%2==0)
+        
+        document.writeln(newarray);
+
+    </script>
+    
+</body>
+</html>

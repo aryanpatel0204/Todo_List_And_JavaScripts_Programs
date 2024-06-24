@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+        .main{
+            width: 1320px;
+            margin: auto;
+        }
+
+        
+        .faqItems{
+            border: 1px saddlebrown solid;
+            margin: 10px 0px;
+        }
+        .faqItems h2{
+            background-color: purple;
+            color: white;
+            font-size: 18px;
+            padding: 15px ;
+            cursor: pointer;
+            position: relative;
+        }
+        .question span{
+            position: absolute;
+            right: 10px;
+            font-size: 25px;
+        }
+        .faqAns{
+            font-size: 18px;
+            padding: 0px;
+            transition: 0.3s;
+            height: 0px;
+            transform-origin: top;
+            transform: scaleY(0);
+        }
+
+
+        .showAns{
+            height: auto;
+            padding: 15px;
+            transform: scaleY(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+      
+        <div class="faqInner">
+            <div class="faqItems">
+                <h2 class="question">
+                    1 Top 108 SEO Interview Questions and Answers  <span>-</span>
+             </h2>
+                <div class="faqAns showAns">Well-curated basic to advanced interview questions on SEO, categorized into freshers and experienced professionals. Also, find tips to fast-track a career in SEO.Well-curated basic to advanced interview questions on SEO, categorized into freshers and experienced professionals. Also, find tips to fast-track a career in SEO.</div>
+            </div>
+            <div class="faqItems">
+                <h2 class="question">2 Top 55 JavaScript Interview Questions and Answers
+                    <span>+</span>
+
+                </h2>
+                <div class="faqAns">The most detailed and well-structured set of interview questions on JavaScript for Freshers and experienced professionals in the field of web development.</div>
+            </div>
+            <div class="faqItems">
+                <h2 class="question">3 Top 55 JavaScript Interview Questions and Answers
+
+                    <span>+</span>
+                </h2>
+                <div class="faqAns">The most detailed and well-structured set of interview questions on JavaScript for Freshers and experienced professionals in the field of web development.Well-curated basic to advanced interview questions on SEO, categorized into freshers and experienced professionals. Also, find tips to fast-track a career in SEO.</div>
+            </div>
+            <div class="faqItems">
+                <h2 class="question">4 Top 55 JavaScript Interview Questions and Answers
+                    <span>+</span>
+
+                </h2>
+                <div class="faqAns">The most detailed and well-structured set of interview questions on JavaScript for Freshers and experienced professionals in the field of web development.</div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+   
+    var allQuestion=document.querySelectorAll(".question"); //Node List | Aarray
+   
+
+    allQuestion.forEach((element,i)=>{//Loop
+        element.addEventListener("click",()=>{ //Click
+
+            allQuestion.forEach((innerEl,index)=>{
+                if(index!=i){
+                    innerEl.nextElementSibling.classList.remove('showAns')
+                    innerEl.children[0].innerHTML="+"
+                }
+            })
+            // var n=["faqAns","showAns"]
+
+            if(element.nextElementSibling.className=="faqAns showAns"){//Ans
+                element.children[0].innerHTML="+" //
+            }
+            else{
+                element.children[0].innerHTML="-"
+            }
+            
+            element.nextElementSibling.classList.toggle('showAns') //Current Element
+            
+           
+        })
+
+    })
+
+</script>
+</html>

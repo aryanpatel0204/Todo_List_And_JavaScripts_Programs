@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            font-family: sans-serif;
+        }
+        .formOuter{
+            max-width: 1000px;
+            margin:auto;
+        }
+        .formOuter form{
+            display: flex;
+            padding:20px 0px;
+            gap:20px;
+        }
+        .formOuter form input{
+            flex-basis:70%;
+            height: 35px;
+        }
+        .formOuter form button{
+            flex-basis:30%;
+        }
+        .toList{
+            width: 1000px;
+            margin: auto;
+        }
+        .toList ul{
+            list-style:none;
+        }
+        .toList ul li{
+            padding: 15px;
+            background-color: cornsilk;
+            position: relative;
+        }
+        .toList ul li span{
+            position: absolute;
+            right: 0px;
+            color:black;
+            font-size: 25px;
+            cursor: pointer;
+            top:10px;
+            padding-right: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="formOuter">
+        <form action="">
+            <input type="text" name="todoname" placeholder="Add todo Items">
+            <button>Save</button>
+        </form>
+    </div>
+    <div class="toList">
+        <ul>
+            <li>Hi <span> x</span> </li>
+        </ul>
+    </div>
+</body>
+<script>
+    const form=document.querySelector("form")
+
+    form.addEventListener("submit",(event)=>{
+        
+        let form=event.target;
+        
+        let userInput=form.todoname.value;
+        alert(userInput);
+
+        event.preventDefault(); //stop form refersh
+    });
+</script>
+</html>

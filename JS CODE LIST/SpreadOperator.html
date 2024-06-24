@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let nos = [11,22,33];
+        let nos2 = [1000,...nos];
+        document.write(nos2+"<br>");
+
+        let user = {
+            "rollno":101,
+            "name":"MG"
+        };
+
+        let marks = {
+            "C":100,
+            ...user
+        };
+
+        document.write(marks+"<br>");
+
+        document.write(user);
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

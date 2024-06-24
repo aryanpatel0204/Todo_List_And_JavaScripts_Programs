@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+
+var userinfo=[
+    {
+        name:"raj",
+        age:30
+    },
+    {
+        name:"jayul",
+        age:31
+    },
+    {
+        name:"manav",
+        age:25
+    },
+    {
+        name:"mansi",
+        age:23
+    },
+
+    {
+        name:"neha",
+        age:21
+    }
+]
+
+var jsondata=JSON.stringify(userinfo); //array to json
+localStorage.setItem('userinfoDetail',jsondata); //jsondata
+
+
+</script>
+</html>

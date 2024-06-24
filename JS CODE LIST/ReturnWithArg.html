@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // function factorial(no){
+        //     let f=1;
+
+        //     for(i=1;i<=no;i++)
+        //     {
+        //         f=f*i;
+        //     }
+
+        //     return f;
+        // }
+
+        const factorial = no => {
+            let f=1;
+
+            for(i=1;i<=no;i++)
+            {
+                f=f*i;
+            }
+
+            return f;
+        }
+
+        // function square(no)
+        // {
+        //     return no*no;
+        // }
+
+        const square = no => no*no;
+
+        let ans = factorial(5);
+        document.write("FActorial = "+ans+"<br>");
+
+        let ans2 = square(5);
+        document.write("Square = "+ans2);
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

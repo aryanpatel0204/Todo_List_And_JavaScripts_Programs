@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+   
+</head>
+<style>
+    body{
+          background: linear-gradient(to right, #4f4d48, rgb(21, 1, 13));
+    }
+    table{
+        margin-top: 100px;
+        border :10px solid black;
+        text-align: center;
+        box-shadow: 0px 0px 10px 2px #1b1b19;
+    }
+    th, td{
+			border: 2px solid black;
+            
+    }   
+    button{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        color: black;
+        border: none;
+		line-height: 80px;
+		font-size: 30px;
+        font-weight: bold;
+    }
+    input{
+        width: 500px;
+        border :10px solid black;
+        text-align: right;
+        padding: 15px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    </style>
+   
+<body>
+    <table width="600" height="600" bgcolor= "darkgrey" cellpadding="0" cellspacing="0" align="center">         
+        <thead>
+            <tr>
+                <th bgcolor="black"  color="white" colspan="4"> <input type="text" value="0"> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2"><button >AC</button></td>
+                <td><button>DEL</button></td>
+                <td><button>/</button></td>
+            </tr>
+            <tr>
+                <td><button>1</button></td>
+                <td><button>2</button></td>
+                <td><button>3</button></td>
+                <td><button>*</button></td>
+            </tr>
+            <tr>
+                <td><button>4</button></td>
+                <td><button>5</button></td>
+                <td><button>6</button></td>
+                <td><button>+</button></td>
+            </tr>
+            <tr>
+                <td><button>7</button></td>
+                <td><button>8</button></td>
+                <td><button>9</button></td>
+                <td><button>-</button></td>
+            </tr>
+            <tr>
+                <td><button>.</button></td>
+                <td><button>0</button></td>
+                <td colspan="2"><button >=</button></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+
+    var table=document.querySelector("table")
+    var input=document.querySelector("input")
+    var opr=["+", "-", "*", "/"] //  remove '.' from this array
+    
+    table.addEventListener("click", (event)=>{
+        if(event.target.tagName=="BUTTON"){
+
+           var textValue=input.value;
+           var lastChar=textValue[textValue.length-1]
+
+           var removeLastChar=textValue.slice(0, textValue.length-1)
+            
+            if(event.target.innerHTML=="AC"){
+                input.value="0"
+            }
+            else if(event.target.innerHTML=="="){
+                if(!opr.includes(lastChar)){
+                    input.value=eval(textValue)
+                }
+                
+            }
+            else if(event.target.innerHTML=="DEL"){
+                 if (input.value!="0"){
+                    input.value=removeLastChar
+                }
+
+            }
+            else{
+              
+                var currentValue=event.target.innerHTML;
+
+                console.log(currentValue)
+                console.log(lastChar)
+                if((textValue=="0" ) && (currentValue=="+" || currentValue=="*" || currentValue=="/" )){
+                    input.value+=currentValue
+                }
+                //(.) logic here
+                else if (currentValue == '.')
+                {
+                    //console.log('here')
+                    let data = input.value;
+                    let lastArr = [];
+                    let element;
+
+                    for(let i = data.length - 1; i >= 0; i--){
+                             element = data[i];
+
+                             if(opr.includes(element)){
+                                break;
+                             }
+                             lastArr.push(element);
+                        }
+                        if(!lastArr.includes('.')){
+                            input.value += currentValue;
+                        }
+                        
+                }
+                else if(opr.includes(currentValue) && opr.includes(lastChar)){
+                    input.value=removeLastChar+currentValue;
+
+                }
+                else{
+                    if (textValue=="0"){
+                        input.value=currentValue
+                    }
+                    else{
+                        input.value=textValue+currentValue
+                    }
+                    
+                }
+
+                
+            }
+
+
+        }
+
+
+    })
+
+</script>
+</html> 

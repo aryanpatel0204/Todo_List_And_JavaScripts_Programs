@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tab">
+        <input type="button" value="Python" id="b1">
+        <input type="button" value="JavaScript" id="b2">
+        <input type="button" value="Java" id="b3">
+    </div>
+
+    <span id="spn1"></span>
+</body>
+<style>
+    #b1,#b2,#b3{
+        font-size: 20px;
+        padding: 5px;
+        margin: 0px;
+        margin: 0px;
+        border: none;
+        cursor: pointer;
+    }
+
+    body {
+        font-family: Arial;
+        text-align: center;
+        margin: 0px;
+    }
+
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+    #spn1 {
+        display: block;
+        font-size: 18px;
+        margin: 20px;
+        color: #333;
+    }
+</style>
+<script>
+    let b1=document.querySelector("#b1");
+    let b2=document.querySelector("#b2");
+    let b3=document.querySelector("#b3");
+    let data=document.querySelector("#spn1");
+
+    let click = () => {
+            data.innerHTML="Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional programming."
+    }
+
+    let click2=()=>{
+            data.innerHTML="JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2023, 98.7% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries." 
+    }
+
+    let click3=()=>{
+            data.innerHTML="Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible." 
+    }
+
+    b1.addEventListener("click",click);
+    b2.addEventListener("click",click2);
+    b3.addEventListener("click",click3);
+
+
+</script>
+</html>

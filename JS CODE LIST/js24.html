@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		table{
+			
+			margin: auto;
+			background: lightgrey;
+		}
+		table td{
+			padding: 10px;
+			text-align: center;
+		}
+		table td button{
+			width: 60px;
+			height: 60px;
+			background: blue;
+			color: white;
+			font-size: 25px;
+			border: none;
+			border-radius: 50%;
+		}
+		table input{
+			width: 300px;
+			height: 40px;
+			font-size: 25px;
+			text-align: right;
+			padding-right: 20px;
+			border-radius: 20px;
+		}
+	</style>
+	
+</head>
+<body>
+		<table border="1" cellspacing="0">
+			<tr>
+				<td><button>C</button></td>
+				<td colspan="3"><input type="text" id="num1" /></td>
+			</tr>
+			<tr>
+				<td><button onclick="storeData('+')">+</button></td>
+				<td><button onclick="storeData('1')">1</button></td>
+				<td><button onclick="storeData('2')">2</button></td>
+				<td><button onclick="storeData('3')">3</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="storeData('-')">-</button></td>
+				<td><button onclick="storeData('4')">4</button></td>
+				<td><button onclick="storeData('5')">5</button></td>
+				<td><button onclick="storeData('6')">6</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="storeData('*')">*</button></td>
+				<td><button onclick="storeData('7')">7</button></td>
+				<td><button onclick="storeData('8')">8</button></td>
+				<td><button onclick="storeData('9')">9</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="storeData('/')">/</button></td>
+				<td><button onclick="storeData('.')">.</button></td>
+				<td><button onclick="storeData('0')">0</button></td>
+				<td><button onclick="calData()">=</button></td>
+			</tr>
+		</table>
+</body>
+	<script type="text/javascript">
+
+	
+		function storeData(v){
+				var txtInput=document.getElementById('num1'); //4
+				var oldValue=txtInput.value; //265
+ 
+				txtInput.value=oldValue+v;//265+ //265 //oldData+newData (Concatenate)
+		}
+		function calData(){
+			var txtInput=document.getElementById('num1'); //12+45
+			var calValue=eval(txtInput.value);//12+36*70
+			txtInput.value=calValue;
+
+		}
+	</script>
+</html>

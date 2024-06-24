@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let nos=[11,22,33,44,55];
+
+        document.write("Length = "+nos.length+"<br>");
+
+        for(i=0;i<=nos.length-1;i++)
+        {
+            document.write(nos[i]+"<br>");
+        }
+
+        let str = nos.toString();
+        document.write("str = "+str+"<br>");
+
+        let str2 = nos.join('MG');
+        document.write("str2 = "+str2+"<br>");
+
+        let pushed =  nos.push(1000);
+        document.write("Pushed = "+pushed+"<br>");
+        document.write(nos);
+
+        let poppedValue = nos.pop();
+        document.write("Popped Value = "+poppedValue+"<br>");
+        document.write(nos);
+
+        let shiftedValue = nos.shift();
+        document.write("Shifted Value = "+shiftedValue+"<br>");
+        document.write(nos);
+
+        let unshiftedValue = nos.unshift(5000);
+        document.write("Unshifted Value = "+unshiftedValue+"<br>");
+        document.write("Nos: "+nos+"<br>");
+
+        
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

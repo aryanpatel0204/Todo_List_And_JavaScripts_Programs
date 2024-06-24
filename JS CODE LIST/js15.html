@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modalDiv{
+            position: fixed;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            top:-100%; /* model above*/
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            box-shadow:0px 0px 10px 2px #ccc;
+            transition: 0.3s; /* Added transition property */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="modalDiv">
+        <h1>Enquiry Now</h1>
+    </div>
+ 
+    <button id="btnModal">Open Modal</button>
+    <script>
+       
+        let btnModal=document.querySelector("#btnModal");
+        let modalDiv=document.querySelector(".modalDiv");
+
+        btnModal.addEventListener("click", () => {
+             modalDiv.style.top = "50%";   
+        });
+    </script>
+</body>
+
+</html>
